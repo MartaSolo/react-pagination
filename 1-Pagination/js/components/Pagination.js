@@ -1,22 +1,14 @@
 import React from "react";
 
-const Pagination = ({ totalPages, handleCurrentPage }) => {
-  const pagesNumbers = [...Array(totalPages).keys()].map(
-    (number) => number + 1
-  );
+const Pagination = ({ totalPages, handlePageChange }) => {
+  const pageNumbers = [...Array(totalPages).keys()].map((number) => number + 1);
 
-  //   const handleClick = (number) => {
-  //     if (typeof handleCurrentPageChange === "function") {
-  //       handleCurrentPageChange(number);
-  //     }
-  //   };
-  //   console.log("pagesNumbers", pagesNumbers);
   return (
     <div>
       <div>
-        {pagesNumbers.map((number) => {
+        {pageNumbers.map((number) => {
           return (
-            <button key={number} onClick={() => handleCurrentPage(number)}>
+            <button key={number} onClick={() => handlePageChange(number)}>
               {number}
             </button>
           );

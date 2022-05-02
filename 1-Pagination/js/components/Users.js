@@ -1,13 +1,13 @@
 import React from "react";
 import User from "./User";
-import { userPerPage } from "../constants";
 
-const Users = ({ users, currentPage }) => {
+const Users = ({ users, currentPage, userPerPage }) => {
   const startIndex = (currentPage - 1) * userPerPage;
+  const endIndex = currentPage * userPerPage;
+  const selectedUsers = users.slice(startIndex, endIndex);
+
   console.log("currentPage", currentPage);
   console.log("startIndex", startIndex);
-  const selectedUsers = users.slice(startIndex, startIndex + userPerPage);
-
   console.log("selectedUsers", selectedUsers);
 
   return (
